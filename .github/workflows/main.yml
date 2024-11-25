@@ -1,0 +1,32 @@
+# Test 2024-11-25 at 02:06:05
+
+name: Test
+run-name: inlineFile
+
+on:
+  push:
+    paths:
+      - '**/main.yml'
+
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Embed a multi-line file inline
+        run: |
+        cat <<EOF > hello.py
+        print("Hello")
+        print("World!")
+EOF
+
+      - name: Run the file
+        run: python3 hello.py
