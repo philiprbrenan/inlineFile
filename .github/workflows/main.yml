@@ -1,4 +1,4 @@
-# Test 2024-11-25 at 02:07:11
+# Test 2024-11-25 at 02:08:09
 
 name: Test
 run-name: inlineFile
@@ -7,14 +7,6 @@ on:
   push:
     paths:
       - '**/main.yml'
-
-
-jobs:
-  test:
-    runs-on: ubuntu-latest
-
-    steps:
-on: [push]
 
 jobs:
   build:
